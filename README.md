@@ -7,7 +7,7 @@ This tool was written in python, however to execute it from a linux terminal you
 After this, you will need to edit your .bashrc file with the following:
 <pre>export PATH=/home/path-to-base64-script:$PATH</pre>
 
-This file is executed each time a terminal window is opened, so it will add the desired script filepath to the $PATH variable.
+The .bashrc file is executed each time a terminal window is opened, so it will add the desired script filepath to the $PATH variable.
 
 HELP PAGE:
 
