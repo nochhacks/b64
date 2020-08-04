@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+
+# Base64 Written by NOCH in Python3 #
+
+import base64, sys, getopt
+
+def main(argv):
+
+        encString = ''	# Reset string variables
+        unEncString = '' 
+
+        try:
+                opts, args = getopt.getopt(argv,"hd:e:",["help", "decode-string=", "encode-string="]) # Catch invalid options
+        except getopt.GetoptError:
+                print("\nUSAGE: base64 [Option] <string>\n\nUse base64 --help for more information\n")
+                sys.exit(2)
+
+        for opt, arg in opts: # traverse through Options and Arguements supplied
+                noArgs = len(sys.argv) - 1
+
+                if noArgs not in (2, 1): # Ensure only 2 or 3 arguements were supplied (--help or -e/-d <string>)
+                        print("\nToo many arguments. Use base64 --help\n")
+                        sys.exit()
+
+                elif opt in ("-h", "--help"): # If help option supplied, print help message
+                        print("\nUSAGE: base64 [Option] <string>\n")
+                        print(" OPTIONS:\n\n\t--decode-string (-d) <Base64 encoded string>\n\t--encode-string (-e) <String to be encoded in Base64> (Use quotes if string contains spaces)\n\t--help (-h)\n")
+                        sys.exit()
+
+                elif opt in ("-d", "--decode-string"):
+                        encString = arg
+                        print("\nEncoded String is:\n", encString+"\n")
+                        decodedBytes = base64.urlsafe_b64decode(encString) # Decode bytes in string
+                        decString = str(decodedBytes, "utf-8") # Convert bytes into utf-8 string
+                        print("\nDecoded String (URLsafe) is:\n", decString+"\n")
+
+                elif opt in ("-e", "--encode-string"):
+                        unEncString = arg
+                        print("\nUnencoded String is:\n", unEncString+"\n")
+                        encodedBytes = base64.urlsafe_b64encode(unEncString.encode("utf-8")) # Encode supplied utf-8 string
+                        encodedStr = str(encodedBytes, "utf-8") # Convert encoded bytes into utf-8 string
+                        print("\nEncoded String (URLsafe) is:\n", encodedStr+"\n")
+
+if __name__ == "__main__":
+        main(sys.argv[1:])
