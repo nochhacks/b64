@@ -15,6 +15,7 @@ Firstly, you need the script. You can do this one of two ways:
 
 2) Diriectly download the ZIP file from the "Code" section above the landing page.
 
+
 Next up, make sure that the script is executable:
 <pre>chmod +x b64</pre>
 
