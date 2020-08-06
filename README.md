@@ -11,7 +11,7 @@ Firstly, you need the script. You can do this one of two ways:
 
 1) Clone the repository:
 
-<pre>git clone https://github.com/nochhacks/base64.git</pre>
+<pre>git clone https://github.com/nochhacks/b64.git</pre>
 
 2) Diriectly download the ZIP file from the "Code" section above the landing page.
 
