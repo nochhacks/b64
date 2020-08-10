@@ -32,11 +32,13 @@ You should have Python added to PATH.
 See how to do this <a href="https://datatofish.com/add-python-to-windows-path/">here</a>.
 
 You can execute the script from the DOS terminal; just go to the directory the "b64" file is held in:
-<pre>python b64 [option] <string></pre>
+<pre>
+python b64 [option] "{string}" 
+</pre>
 
 # HELP PAGE:
 
-<pre>USAGE: b64 [option] <string>
+<pre>USAGE: b64 [option] "{string}"
   
   Options:
   
